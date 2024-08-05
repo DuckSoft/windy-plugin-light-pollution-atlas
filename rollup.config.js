@@ -19,35 +19,7 @@ const buildConfigurations = {
     src: {
         input: 'src/plugin.svelte',
         out: 'plugin',
-    },
-    example01: {
-        input: 'examples/01-hello-world/plugin.svelte',
-        out: 'example01/plugin',
-    },
-    example02: {
-        input: 'examples/02-using-vanilla-js/plugin.svelte',
-        out: 'example02/plugin',
-    },
-    example03: {
-        input: 'examples/03-boat-tracker/plugin.svelte',
-        out: 'example03/plugin',
-    },
-    example04: {
-        input: 'examples/04-aircraft-range/plugin.svelte',
-        out: 'example04/plugin',
-    },
-    example05: {
-        input: 'examples/05-airspace-map/plugin.svelte',
-        out: 'example05/plugin',
-    },
-    example06: {
-        input: 'examples/06-foehn-chart/plugin.svelte',
-        out: 'example06/plugin',
-    },
-    example07: {
-        input: 'examples/07-meteoblue-meteograms/plugin.svelte',
-        out: 'example07/plugin',
-    },
+    }
 };
 
 const requiredConfig = process.env.CONFIG || 'src';

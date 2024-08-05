@@ -1,15 +1,15 @@
 import type { ExternalPluginConfig } from '@windy/interfaces';
 
 const config: ExternalPluginConfig = {
-    name: 'windy-plugin-my-plugin',
+    name: 'windy-plugin-light-pollution-atlas',
     version: '0.1.0',
-    icon: '🔌',
-    title: 'This is my first plugin',
-    description: 'This is my first plugin.',
-    author: 'John Doe (optional company name)',
-    repository: 'https://github.com/windycom/windy-plugin-template',
-    desktopUI: 'rhpane',
-    mobileUI: 'fullscreen',
+    icon: '🌌',
+    title: 'Light Pollution Atlas Plugin',
+    description: 'Show light pollution atlas on Windy map.',
+    author: 'DuckSoft',
+    repository: 'https://github.com/DuckSoft/windy-plugin-light-pollution-atlas',
+    desktopUI: 'embedded',
+    mobileUI: 'small',
     routerPath: '/my-plugin',
 };
 
