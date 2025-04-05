@@ -11,7 +11,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://DuckSoft/windy-plugin-light-pollution-atlas.git"
+        "url": "git+https://github.com/DuckSoft/windy-plugin-light-pollution-atlas.git"
     },
     "keywords": [
         "light pollution",
