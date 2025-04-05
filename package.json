@@ -22,9 +22,9 @@
     "author": "Unlicense",
     "license": "ISC",
     "bugs": {
-        "url": "https://github.com/windycom/windy-plugin-template/issues"
+        "url": "https://github.com/DuckSoft/windy-plugin-light-pollution-atlas/issues"
     },
-    "homepage": "https://docs.windy-plugins.com/",
+    "homepage": "https://github.com/DuckSoft/windy-plugin-light-pollution-atlas",
     "dependencies": {
         "@windycom/plugin-devtools": "^3.0.0"
     }
