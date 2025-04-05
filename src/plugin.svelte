@@ -30,9 +30,7 @@
     <small>
         Created by
         <a target="_blank" href="https://github.com/DuckSoft">DuckSoft</a>. Data:
-        <a target="_blank" href="https://djlorenz.github.io/astronomy/lp2022/">djlorenz</a>
-        &amp;
-        <a target="_blank" href="https://ladsweb.modaps.eosdis.nasa.gov/">NASA</a>
+        <a target="_blank" href="https://djlorenz.github.io/astronomy/lp/">djlorenz</a>
     </small>
 </div>
 
@@ -41,14 +39,12 @@
     import { onDestroy, onMount } from 'svelte';
 
     const urls: { [Key: string]: string } = {
-        '2006': 'https://djlorenz.github.io/astronomy/lp2006/overlay/tiles/tile_{z}_{x}_{y}.png',
-        '2016': 'https://djlorenz.github.io/astronomy/lp2016/overlay/tiles/tile_{z}_{x}_{y}.png',
-        '2020': 'https://djlorenz.github.io/astronomy/lp2020/overlay/tiles/tile_{z}_{x}_{y}.png',
-        '2022': 'https://djlorenz.github.io/astronomy/lp2022/overlay/tiles/tile_{z}_{x}_{y}.png',
-        trend_2013_2022:
-            'https://djlorenz.github.io/astronomy/lp2022/overlay/trend_2013_2022/tile_{z}_{x}_{y}.png',
-        viirs_2023:
-            'https://www.ducksoft.site/windy-plugin-light-pollution-atlas/viirs2023/{z}/{x}/{y}.png',
+        '2006': 'https://djlorenz.github.io/astronomy/image_tiles/tiles2006/tile_{z}_{x}_{y}.png',
+        '2016': 'https://djlorenz.github.io/astronomy/image_tiles/tiles2016/tile_{z}_{x}_{y}.png',
+        '2020': 'https://djlorenz.github.io/astronomy/image_tiles/tiles2020/tile_{z}_{x}_{y}.png',
+        '2022': 'https://djlorenz.github.io/astronomy/image_tiles/tiles2022/tile_{z}_{x}_{y}.png',
+        '2023': 'https://djlorenz.github.io/astronomy/image_tiles/tiles2023/tile_{z}_{x}_{y}.png',
+        '2024': 'https://djlorenz.github.io/astronomy/image_tiles/tiles2024/tile_{z}_{x}_{y}.png',
     };
     const djlorenzOption: { [Key: string]: any } = {
         minZoom: 2,
@@ -56,20 +52,20 @@
         tileSize: 1024,
         zoomOffset: -2,
     };
-    const viirsOption: { [Key: string]: any } = {
-        minZoom: 0,
-        maxNativeZoom: 6,
-    };
+    // const viirsOption: { [Key: string]: any } = {
+    //     minZoom: 0,
+    //     maxNativeZoom: 6,
+    // };
     const tileOptions: { [Key: string]: any } = {
         '2006': djlorenzOption,
         '2016': djlorenzOption,
         '2020': djlorenzOption,
         '2022': djlorenzOption,
-        trend_2013_2022: djlorenzOption,
-        viirs_2023: viirsOption,
+        '2023': djlorenzOption,
+        '2024': djlorenzOption,
     };
-    const options = ['2006', '2016', '2020', '2022', 'viirs_2023', 'trend_2013_2022'];
-    let mapSelection = '2022';
+    const options = ['2006', '2016', '2020', '2022', '2023', '2024'];
+    let mapSelection = '2024';
     let mapOverlay: L.TileLayer | null = null;
     let mapOpacity = 0.5;
 
