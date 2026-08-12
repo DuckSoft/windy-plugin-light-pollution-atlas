@@ -2,7 +2,7 @@ import type { ExternalPluginConfig } from '@windy/interfaces';
 
 const config: ExternalPluginConfig = {
     name: 'windy-plugin-light-pollution-atlas',
-    version: '0.3.1',
+    version: '0.4.0',
     icon: '🌌',
     title: 'Light Pollution Atlas Plugin',
     description: 'Show light pollution atlas on Windy map.',

@@ -1,6 +1,5 @@
 import resolve from '@rollup/plugin-node-resolve';
 import commonjs from '@rollup/plugin-commonjs';
-import typescript from '@rollup/plugin-typescript';
 import terser from '@rollup/plugin-terser';
 
 import serve from 'rollup-plugin-serve';
@@ -50,14 +49,6 @@ export default {
         clearScreen: false,
     },
     plugins: [
-        typescript({
-            sourceMap: useSourceMaps,
-            inlineSources: false,
-        }),
-        rollupSwc({
-            include: ['**/*.ts', '**/*.svelte'],
-            sourceMaps: useSourceMaps,
-        }),
         rollupSvelte({
             emitCss: false,
             preprocess: {
@@ -70,6 +61,10 @@ export default {
                     return preprocessed.script(data);
                 },
             },
+        }),
+        rollupSwc({
+            include: ['**/*.ts', '**/*.svelte'],
+            sourceMaps: useSourceMaps,
         }),
 
         resolve({

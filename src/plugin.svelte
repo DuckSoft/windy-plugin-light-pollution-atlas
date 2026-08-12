@@ -35,37 +35,27 @@
 </div>
 
 <script lang="ts">
-    import { map } from '@windy/map';
+    import { layerOrder, map } from '@windy/map';
     import { onDestroy, onMount } from 'svelte';
 
-    const urls: { [Key: string]: string } = {
-        '2006': 'https://djlorenz.github.io/astronomy/image_tiles/tiles2006/tile_{z}_{x}_{y}.png',
+    const urls: { [key: string]: string } = {
         '2016': 'https://djlorenz.github.io/astronomy/image_tiles/tiles2016/tile_{z}_{x}_{y}.png',
         '2020': 'https://djlorenz.github.io/astronomy/image_tiles/tiles2020/tile_{z}_{x}_{y}.png',
         '2022': 'https://djlorenz.github.io/astronomy/image_tiles/tiles2022/tile_{z}_{x}_{y}.png',
         '2023': 'https://djlorenz.github.io/astronomy/image_tiles/tiles2023/tile_{z}_{x}_{y}.png',
         '2024': 'https://djlorenz.github.io/astronomy/image_tiles/tiles2024/tile_{z}_{x}_{y}.png',
+        '2025': 'https://djlorenz.github.io/astronomy/image_tiles/tiles2025/tile_{z}_{x}_{y}.png',
     };
-    const djlorenzOption: { [Key: string]: any } = {
+    const tileOptions: L.TileLayerOptions = {
         minZoom: 2,
         maxNativeZoom: 8,
+        maxZoom: 19,
         tileSize: 1024,
-        zoomOffset: -2,
+        opacity: 0.5,
+        layerBucketId: layerOrder.MAIN,
     };
-    // const viirsOption: { [Key: string]: any } = {
-    //     minZoom: 0,
-    //     maxNativeZoom: 6,
-    // };
-    const tileOptions: { [Key: string]: any } = {
-        '2006': djlorenzOption,
-        '2016': djlorenzOption,
-        '2020': djlorenzOption,
-        '2022': djlorenzOption,
-        '2023': djlorenzOption,
-        '2024': djlorenzOption,
-    };
-    const options = ['2006', '2016', '2020', '2022', '2023', '2024'];
-    let mapSelection = '2024';
+    const options = ['2016', '2020', '2022', '2023', '2024', '2025'];
+    let mapSelection = '2025';
     let mapOverlay: L.TileLayer | null = null;
     let mapOpacity = 0.5;
 
@@ -85,11 +75,9 @@
 
     onMount(() => {
         if (!mapOverlay) {
-            mapOverlay = L.tileLayer(urls[mapSelection], {
-                ...tileOptions[mapSelection],
-                maxZoom: 19,
+            mapOverlay = new L.TileLayer(urls[mapSelection], {
+                ...tileOptions,
                 opacity: mapOpacity,
-                zIndex: 200,
             });
             mapOverlay.addTo(map);
         }

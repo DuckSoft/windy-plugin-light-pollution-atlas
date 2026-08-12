@@ -1,6 +1,6 @@
 {
     "name": "windy-plugin-light-pollution-atlas",
-    "version": "3.0.0",
+    "version": "5.0.1",
     "description": "Light Pollution Atlas Overlay for Windy",
     "main": "dist/plugin.min.js",
     "type": "module",
@@ -26,6 +26,6 @@
     },
     "homepage": "https://github.com/DuckSoft/windy-plugin-light-pollution-atlas",
     "dependencies": {
-        "@windycom/plugin-devtools": "^3.0.0"
+        "@windycom/plugin-devtools": "^3.0.4"
     }
 }
