@@ -68,6 +68,10 @@
     function updateOpacity() {
         if (mapOverlay) {
             mapOverlay.setOpacity(mapOpacity);
+            const layer = mapOverlay.layer();
+            if (layer) {
+                map.maplibreMap.setPaintProperty(layer.id, 'raster-opacity', mapOpacity);
+            }
         }
     }
 
