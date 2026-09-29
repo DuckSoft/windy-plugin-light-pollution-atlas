@@ -29,7 +29,7 @@ Windy plugin that overlays djlorenz Light Pollution Atlas raster tiles on the Wi
 - `src/plugin.svelte`: UI, tile URLs/options, map mutations, and styles.
 - `src/pluginConfig.ts`: Windy plugin metadata, including `/light-pollution-atlas` router path.
 - `rollup.config.js`: entry, Svelte/Less/SWC processing, external Windy imports, output, and dev server.
-- `package.json`, `tsconfig.json`, `.eslintrc.cjs`, `.prettierrc`: commands and language/style settings; `README.md` and `CHANGELOG.md`: project and release context.
+- `package.json`, `tsconfig.json`, `.eslintrc.cjs`, `.prettierrc`: commands and language/style settings; `README.md`: project context.
 
 ## Runtime/Tooling Preferences
 Use npm with a supported Node.js runtime; `package.json` declares no exact Node version or `engines`. This is an ESM package (`"type": "module"`) built by Rollup, not Bun. TypeScript targets ES2022 and uses Windy types supplied through `@windycom/plugin-devtools`; Svelte and Less are processed in the Rollup pipeline. Avoid treating `tsconfig.json`'s `noEmit` as the bundler.
